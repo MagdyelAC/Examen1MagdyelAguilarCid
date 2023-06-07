@@ -1,5 +1,5 @@
 
-package org.uv.Practica08.controller;
+package org.uv.Examen1MagdyelAguilarCid.controller;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package org.uv.Practica08.controller;
+package org.uv.Examen1MagdyelAguilarCid.controller;
 
 /**
  *
  * @author atrcu
  */
-public class DTOEmpleado {
+public class Alumnos {
     private long clave;
     private String nombre;
     private String direccion;

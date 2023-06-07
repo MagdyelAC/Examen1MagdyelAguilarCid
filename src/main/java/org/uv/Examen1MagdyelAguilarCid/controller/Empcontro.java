@@ -1,5 +1,5 @@
 
-package org.uv.Practica08.controller;
+package org.uv.Examen1MagdyelAguilarCid.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api")
 
-public class EmpleadoController {
+public class Empcontro {
     @Autowired
     private RepositoryEmpleado RepositoryEmpleado;
     
@@ -26,10 +26,10 @@ public class EmpleadoController {
     }
     
     @GetMapping("/empleado/{id")   
-    public DTOEmpleado obtenerEmpleado(@PathVariable("id") long id) {
-        DTOEmpleado emp=null;
+    public Alumnos obtenerEmpleado(@PathVariable("id") long id) {
+        Alumnos emp=null;
         if (id == 10) {
-            emp = new  DTOEmpleado();
+            emp = new  Alumnos();
             emp.setClave(10);
             emp.setNombre("Aldo");
             emp.setDireccion("Avenida 1");
@@ -38,16 +38,16 @@ public class EmpleadoController {
         return emp;
     }
     @GetMapping("/empleado")
-    public List<DTOEmpleado> obtenerTodosLosEmpleados() {
-        List<DTOEmpleado> lstEmpleados=new ArrayList<>();
-            DTOEmpleado emp1 = new DTOEmpleado();
+    public List<Alumnos> obtenerTodosLosEmpleados() {
+        List<Alumnos> lstEmpleados=new ArrayList<>();
+            Alumnos emp1 = new Alumnos();
             emp1.setClave(10);
             emp1.setNombre("Aldo");
             emp1.setDireccion("Avenida 1");
             emp1.setTelefono("123");
             
             lstEmpleados.add(emp1);
-            DTOEmpleado emp2 = new DTOEmpleado();
+            Alumnos emp2 = new Alumnos();
             emp2.setClave(12);
             emp2.setNombre("Gabrie");
             emp2.setDireccion("Avenida 2");
@@ -75,13 +75,13 @@ public class EmpleadoController {
     }
     
     @PostMapping("/empleado")    
-    public DTOEmpleado creaEmpleado(@RequestBody DTOEmpleado empleadoDTO){
+    public Alumnos creaEmpleado(@RequestBody Alumnos empleadoDTO){
         Empleado empleadoPojo=new Empleado();
         empleadoPojo.setNombre(empleadoDTO.getNombre());
         empleadoPojo.setDireccion(empleadoDTO.getDireccion());
         empleadoPojo.setTelefono(empleadoDTO.getTelefono());     
         Empleado empleadoPojoNew=RepositoryEmpleado.save(empleadoPojo);
-        DTOEmpleado empleadoDTONew=new DTOEmpleado();
+        Alumnos empleadoDTONew=new Alumnos();
         empleadoDTONew.setClave(empleadoPojoNew.getClave());
         empleadoDTONew.setNombre(empleadoPojoNew.getNombre());
         empleadoDTONew.setDireccion(empleadoPojoNew.getDireccion());
@@ -100,8 +100,8 @@ public class EmpleadoController {
         
     }
     @PutMapping("/empleado/{id")
-    public DTOEmpleado modificarEmpleado(@PathVariable("id") Long id,
-            @RequestBody DTOEmpleado empleado){
+    public Alumnos modificarEmpleado(@PathVariable("id") Long id,
+            @RequestBody Alumnos empleado){
         //Mape, buscar ID y update
         return empleado;
     
